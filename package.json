@@ -9,9 +9,20 @@
     "type": "git",
     "url": "https://github.com/mohammad-abu-haded/vscode-parameter-reorder.git"
   },
-  "engines": { "vscode": "^1.85.0" },
-  "categories": ["Refactoring", "Programming Languages"],
-  "keywords": ["refactor", "parameters", "typescript", "javascript", "reorder"],
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Refactoring",
+    "Programming Languages"
+  ],
+  "keywords": [
+    "refactor",
+    "parameters",
+    "typescript",
+    "javascript",
+    "reorder"
+  ],
   "main": "./dist/extension.js",
   "activationEvents": [
     "onLanguage:typescript",
@@ -69,7 +80,7 @@
   "devDependencies": {
     "@types/node": "^20.14.0",
     "@types/vscode": "^1.85.0",
-    "@vscode/vsce": "^3.2.0",
+    "@vscode/vsce": "^4.1.0",
     "esbuild": "^0.24.0",
     "typescript": "^5.6.3"
   }
