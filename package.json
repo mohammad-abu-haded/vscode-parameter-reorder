@@ -1,0 +1,72 @@
+{
+  "name": "param-reorder",
+  "displayName": "Parameter Reorder",
+  "description": "Reorder a function's parameters and automatically rewrite every call site across your TypeScript / JavaScript project.",
+  "version": "1.0.0",
+  "publisher": "MohammadAbuHaded",
+  "license": "MIT",
+  "engines": { "vscode": "^1.85.0" },
+  "categories": ["Refactoring", "Programming Languages"],
+  "keywords": ["refactor", "parameters", "typescript", "javascript", "reorder"],
+  "main": "./dist/extension.js",
+  "activationEvents": [
+    "onLanguage:typescript",
+    "onLanguage:typescriptreact",
+    "onLanguage:javascript",
+    "onLanguage:javascriptreact"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "paramReorder.reorder",
+        "title": "Reorder Parameters…",
+        "category": "Refactor"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "paramReorder.reorder",
+        "key": "ctrl+alt+r",
+        "mac": "cmd+alt+r",
+        "when": "editorTextFocus && (editorLangId == typescript || editorLangId == typescriptreact || editorLangId == javascript || editorLangId == javascriptreact)"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "paramReorder.reorder",
+          "when": "editorLangId == typescript || editorLangId == typescriptreact || editorLangId == javascript || editorLangId == javascriptreact",
+          "group": "1_modification@100"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Parameter Reorder",
+      "properties": {
+        "paramReorder.saveAfterApply": {
+          "type": "boolean",
+          "default": false,
+          "description": "Save every modified file right after the refactor is applied."
+        },
+        "paramReorder.previewByDefault": {
+          "type": "boolean",
+          "default": false,
+          "description": "Tick “Preview changes before applying” by default (opens VS Code's Refactor Preview)."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "node esbuild.js",
+    "test": "esbuild test/core.test.ts --bundle --platform=node --outfile=test/out.js --log-level=warning && node test/out.js",
+    "package": "node esbuild.js --production && vsce package --no-dependencies --skip-license --allow-missing-repository"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^3.2.0",
+    "esbuild": "^0.24.0",
+    "typescript": "^5.6.3"
+  }
+}
