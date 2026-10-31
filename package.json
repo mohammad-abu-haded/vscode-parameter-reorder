@@ -1,8 +1,9 @@
 {
   "name": "param-reorder",
   "displayName": "Parameter Reorder",
+  "icon": "media/icon.png",
   "description": "Reorder a function's parameters and automatically rewrite every call site across your TypeScript / JavaScript project.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "MohammadAbuHaded",
   "license": "MIT",
   "repository": {
