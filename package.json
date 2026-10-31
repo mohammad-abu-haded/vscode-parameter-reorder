@@ -5,6 +5,10 @@
   "version": "1.0.0",
   "publisher": "MohammadAbuHaded",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mohammad-abu-haded/vscode-parameter-reorder.git"
+  },
   "engines": { "vscode": "^1.85.0" },
   "categories": ["Refactoring", "Programming Languages"],
   "keywords": ["refactor", "parameters", "typescript", "javascript", "reorder"],
