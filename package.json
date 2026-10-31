@@ -74,7 +74,7 @@
   "scripts": {
     "typecheck": "tsc --noEmit",
     "build": "node esbuild.js",
-    "test": "esbuild test/core.test.ts --bundle --platform=node --outfile=test/out.js --log-level=warning && node test/out.js",
+    "test": "node -e \"require('esbuild').buildSync({entryPoints:['test/core.test.ts'],bundle:true,platform:'node',outfile:'test/out.js',logLevel:'warning'})\" && node test/out.js",
     "package": "node esbuild.js --production && vsce package --no-dependencies --skip-license --allow-missing-repository"
   },
   "devDependencies": {
